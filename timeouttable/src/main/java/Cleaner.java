@@ -1,10 +1,10 @@
 import java.util.ConcurrentModificationException;
 
 /**
- * DOCUMENT ME!
+ * Created by zumba on 11.08.16.
  *
- * @author $author$
- * @version $Revision: 1.4 $
+ * @author Alexander Vladimirov
+ *         <alexandervladimirov1902@gmail.com>
  */
 
 class Cleaner extends Thread {
