@@ -8,6 +8,7 @@ public class Demo {
         CountingThread thread = new CountingThread();
         thread.start();
         System.out.println("Enter 'stop' to break counting of thread:");
+
         while (true) {
             if (scanner.nextLine().equals("stop")) {
                 thread.stopCounting();
