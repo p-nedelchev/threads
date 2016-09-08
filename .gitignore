@@ -3,6 +3,15 @@
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
+#MyIgnore
+.gradle
+.idea
+build.gradle
+gradle
+gradlew
+gradlew.bat
+settings.gradle
+
 # Package Files #
 *.jar
 *.war
