@@ -12,7 +12,8 @@ public class Demo {
         Thread countingThread = new Thread(counter);
         countingThread.start();
         if(scanner.hasNext()) {
-           countingThread.interrupt();
+            counter.stop();
+            System.out.println(counter.getValue());
         }
     }
 }

@@ -5,24 +5,30 @@ package com.clouway.first;
  */
 public class Counter implements Runnable {
     private int counter;
+    private boolean flag;
+
 
     public Counter() {
         this.counter = 0;
+        this.flag = true;
     }
 
     public void run() {
-        while(true) {
+        while(flag) {
             try {
                 Thread.sleep(500);
                 counter++;
             } catch (InterruptedException e) {
-                printValue();
-                break;
+                e.printStackTrace();
             }
         }
     }
 
-    private void printValue() {
-        System.out.println(counter);
+    public int getValue() {
+        return this.counter;
+    }
+
+    public void stop (){
+        this.flag = false;
     }
 }
