@@ -12,11 +12,17 @@ public class Counter implements Runnable {
 
     public void run() {
         while(true) {
-            counter++;
+            try {
+                Thread.sleep(500);
+                counter++;
+            } catch (InterruptedException e) {
+                printValue();
+                break;
+            }
         }
     }
 
-    public int getValue() {
-        return this.counter;
+    private void printValue() {
+        System.out.println(counter);
     }
 }

@@ -10,13 +10,9 @@ public class Demo {
         Scanner scanner = new Scanner(System.in);
         Counter counter = new Counter();
         Thread countingThread = new Thread(counter);
-        while(true) {
-            countingThread.start();
-            if(scanner.hasNext()) {
-                countingThread.interrupt();
-                System.out.println(counter.getValue());
-                return;
-            }
+        countingThread.start();
+        if(scanner.hasNext()) {
+           countingThread.interrupt();
         }
     }
 }
