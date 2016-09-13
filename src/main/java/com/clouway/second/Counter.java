@@ -4,24 +4,21 @@ package com.clouway.second;
  * @author Petar Nedelchev <peter.krasimirov@gmail.com>
  */
 public class Counter implements Runnable{
-    private int beginning;
-    private int ending;
+    private int end;
     private int counter;
     private boolean flag;
     private Counter concurrent;
 
-    public Counter(int beginning, int ending, Counter concurrent) {
-        this.beginning = beginning;
-        this.ending = ending;
+    public Counter(int end) {
+        this.end = end;
         this.flag = true;
-        this.counter = beginning;
-        this.concurrent = concurrent;
+        this.counter = 0;
     }
 
     public void run() {
-        while(flag && counter <= ending) {
+        while(flag && counter <= end) {
             try {
-                System.out.println("Thread (" + beginning + ", " + ending + "): " + counter);
+                System.out.println("Thread (" + end + "): " + counter);
                 Thread.sleep(500);
                 counter ++;
             } catch (InterruptedException e) {
@@ -37,4 +34,7 @@ public class Counter implements Runnable{
         this.flag = false;
     }
 
+    public void setConcurrent(Counter concurrent) {
+        this.concurrent = concurrent;
+    }
 }
