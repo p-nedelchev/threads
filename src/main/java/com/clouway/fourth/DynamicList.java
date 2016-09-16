@@ -8,9 +8,9 @@ public class DynamicList {
     private Integer size;
     private int index;
 
-    public DynamicList(int length) {
-        this.list = new Integer[length];
-        this.size = length;
+    public DynamicList(int size) {
+        this.list = new Integer[size];
+        this.size = size;
         this.index = 0;
     }
 
@@ -53,7 +53,7 @@ public class DynamicList {
     }
 
     public boolean isFull() {
-        return index == size;
+        return list.length == size;
     }
 
     public boolean isEmpty() {
